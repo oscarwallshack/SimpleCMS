@@ -1,0 +1,238 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* #### MAIN LAYOUT #### */
+.header {grid-area: header;}
+.aside_col {grid-area: aside;}
+.main_content {grid-area: content;}
+.footer {grid-area: footer;}
+
+.grid_container{
+    display: grid;
+    grid-template-areas: 
+    'header header header'
+    'content content content'
+    'content content content'
+    'footer footer footer';
+}
+
+
+/* #### HEADER #### */
+header{
+    padding: 1.5rem 0 1.5rem 0;
+    z-index: 100;
+}
+/* #### NAVIGATION #### */
+.top_nav{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    color:rgb(129, 129, 129);
+}
+.top_nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction:row-reverse;
+}
+
+.top_nav a {
+    float:right;
+    display: block;
+    color: #f2f2f2; 
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 1rem 0 1rem;
+    }
+  
+   #logo{
+    float: left;
+    background: #d35892; 
+    width:fit-content;
+    margin-left: 1rem;
+    margin-top: 1rem;
+
+    }
+  #zaloguj_butt {background: #d35892; width:fit-content; margin-right:1rem;}
+ 
+  .top_nav a:hover {
+    background-color: #ddd;
+    color:  #8ce0e5; 
+  }
+  .top_nav a.active {
+    color: #eec5e2;
+  }
+  .top_nav .icon {
+    display: none;
+  }
+  .active:hover{
+    color: #8ce0e5;
+
+  }
+  @media screen and (max-width: 800px) {
+    .top_nav li:not(:last-child) {display: none;}
+    .top_nav a.icon {
+      float: right;
+      display: block;
+      margin-right: 3rem;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .top_nav.responsive {
+        background:#23b5c85e; 
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        position: fixed; 
+        padding: 1em 0 1rem 0;
+        display: flex; 
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .top_nav.responsive ul {
+      flex-direction: column;
+      flex-wrap: wrap;
+  }
+    
+    .top_nav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-top: 1em;
+    }
+    .top_nav.responsive li {
+      width: 100%;
+      float: right;
+      display: block;
+      text-align: right;
+    }
+    #logo{text-align: left; background: #d35892; width:fit-content;}
+    #zaloguj_butt {text-align: right; background: #d35892; width:fit-content;}
+    
+  }
+/* #### main content #### */
+.main_content_template{
+  display: block;
+  margin-left: 4em;
+}
+.blur{
+    height: auto;
+    margin: 6rem 4rem 0 4rem;
+    padding: 1rem;
+    color: #FFF;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    text-align: justify;
+    line-height: 1;
+    -webkit-backdrop-filter: blur(10px);
+     backdrop-filter: blur(10px);
+   }
+.blur p{
+    color: black;
+}
+h2{text-align: center;}
+/* #### ATF #### */
+
+.atf{
+    text-align: center;
+}
+
+
+/* #### footer #### */
+.footer{
+    padding: 1.5rem 0 1.5rem 0;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.footer_col{
+    width: auto;
+}
+.copyRight{
+  padding: 0;
+  margin: 0;
+  width:100%;
+}
+
+
+
+/* #### LOGOWANIE LAYOUT #### */
+::placeholder{
+  color:rgba(255, 255, 255, 0.685);
+}
+.login_page{
+  height: 100%;
+  display: flex;
+  width: auto;
+}
+
+.container_logowanie  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 2%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(1px);
+     backdrop-filter: blur(1px);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 2.5em;
+  margin-top: 15%;
+  min-width: 20rem;
+  
+}
+
+.container_logowanie form {
+  text-align: center;
+}
+.container_logowanie h1{
+  text-transform: uppercase;
+}
+.container_logowanie .form_inputs {
+  background: none;
+  width: auto;
+  margin-bottom: 1.6em;
+  line-height: 2.4em;
+  font-family: roboto;
+  font-weight: 300;
+  letter-spacing: 0.02rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom:  1px solid rgba(255, 255, 255, 0.65);
+  color: #fff;
+}
+.container_logowanie button{
+  background-color: unset;
+  border-bottom:  1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50px;
+}
+.btn{
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  width: 10em;
+  height: 3em;
+}
